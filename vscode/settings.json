@@ -48,5 +48,7 @@
   "sync.gist": "231e64a001dde0a0ffdd77052bd4e228",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  }
+  },
+  // Deprecation Notices
+  "bracket-pair-colorizer-2.depreciation-notice": false
 }
