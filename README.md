@@ -66,7 +66,13 @@ Check that yarn is installed correctly:
   yarn -v
 </pre>
 
-### 4. Install Git & Create SSH Keys
+### 4. Install Gulp
+
+<pre>
+  brew install gulp-cli
+</pre>
+
+### 5. Install Git & Create SSH Keys
 
 <pre>
   brew install git <br>
