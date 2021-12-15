@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,8 +15,8 @@ export ZSH="/Users/h510084/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-ZSH_THEME="theunraveler"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,7 +78,13 @@ ZSH_THEME="theunraveler"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  node
+  npm
+  nvm
+  z
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,10 +111,58 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# ZSH Aliases
+alias zshrc="code ~/.zshrc"
+alias reload="source ~/.zshrc"
 # Homebrew Aliases
-alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
+alias bup="brew update && brew upgrade && brew cleanup && brew doctor"
+alias blist="brew list"
+# GitHub Aliases
+alias gita="git add ."
+alias gitcm="git commit -m" # Followed by message in quotes
+alias gits="git status"
+alias gitpom="git push origin main"
+alias gitcb="git checkout -b"
+alias gitc="git clone"
+alias gitpu="git pull"
+alias gitp="git push"
+# GatsbyJS Aliases
+## Run gatsby new in global project folder "dev"
+alias gnew="gatsby new"
+alias gdev="gatsby develop"
+# NextJS Aliases
+alias ncna="npx create-next-app@latest"
+alias ncnat="npx create-next-app@latest --typescript"
+alias ndev="npm run dev"
+alias nbuild="npm run build && npm run export"
+alias nstart="npm run start"
+# NPM Aliases
+alias ni="npm install"
+alias nis='npm install --save'
+alias nid='npm install --save-dev'
+alias nu="npm uninstall"
+alias nus='npm uninstall --save'
+alias nud='npm uninstall --save-dev'
+alias nod='npm outdated'
+alias nrb='npm rebuild'
+alias nud='npm update'
+alias nr='npm run'
+alias nls='npm list'
+alias nlsg='npm list --global'
+# Yarn Aliases
+alias y="yarn"
+alias yi="yarn init -y"
+alias ya="yarn add"
+alias yr="yarn remove"
+alias yad="yarn add -D"
+alias yga="yarn global add"
+alias ygr="yarn global remove"
+alias yu="yarn upgrade"
+alias ygu="yarn global upgrade"
+alias yl="yarn list --depth=0"
+alias ygl="yarn global list --depth=0"
+alias yo="yarn outdated"
 
 # NVM Source
 export NVM_DIR="$HOME/.nvm"
@@ -111,3 +172,12 @@ export NVM_DIR="$HOME/.nvm"
 # ZSH Plugin paths
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Change Default ZSH prompt
+# PROMPT='%B%F{51}%n %1~ %#'
+
+# Powerlevel10k Source
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

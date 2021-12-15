@@ -1,0 +1,5 @@
+[user]
+	name = evanMarshallTheBay
+	email = evan.marshall@thebay.com
+[core]
+	excludesfile = /Users/h510084/.gitignore_global

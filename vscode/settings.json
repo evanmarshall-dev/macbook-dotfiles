@@ -1,8 +1,52 @@
 {
-    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "workbench.colorTheme": "Atom One Dark",
-    "editor.formatOnSave": true,
-    "workbench.statusBar.visible": false,
-    "editor.minimap.enabled": false
+  //Terminal
+  "terminal.integrated.fontFamily": "Fira Mono for Powerline",
+  // Editor settings
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.scrollBeyondLastLine": false,
+  "editor.scrollBeyondLastColumn": 2,
+  "editor.accessibilitySupport": "off",
+  // ESLint for code quality - Prettier for formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.probe": ["javascript", "javascriptreact", "vue"],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  //   "vetur.validation.template": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  // Toggle sidebar & activity bar (install multi-command ext)
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.makeRoom",
+      "sequence": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.toggleActivityBarVisibility"
+      ]
+    }
+  ],
+  // Show/hide files in file tree
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.DS_Store": true,
+    "**/.git": false,
+    "**/.hg": true,
+    "**/.next": false,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/dist": false
+  },
+  // Themes
+  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "sync.gist": "231e64a001dde0a0ffdd77052bd4e228",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  }
 }
