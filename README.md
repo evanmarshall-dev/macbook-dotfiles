@@ -10,44 +10,88 @@
 
 ### 1. Install Homebrew
 
-First, check that you have Xcode installed `xcode-select --install` in terminal, then run:
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+First, check that you have Xcode installed:
+
+<pre>
+  xcode-select --install
+</pre>
+
+Then run:
+
+<pre>
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</pre>
 
 ### 2. Install NVM & Configure Node
 
-`brew install nvm`
+<pre>
+  brew install nvm
+</pre>
+
 Create an .nvm directory:
-`mkdir ~/.nvm`
-Add these lines to .zshrc:
+
+<pre>
+  mkdir ~/.nvm
+</pre>
+
+Then add the following lines to your .zshrc:
 
 <pre>
   export NVM_DIR=~/.nvm <br>
-  source $(brew --prefix nvm)/nvm.sh`
+  source $(brew --prefix nvm)/nvm.sh
 </pre>
 
 Now quit and reopen terminal.
-`nvm install node`
-`nvm use node`
+
+<pre>
+  nvm install node <br>
+  nvm use node
+</pre>
+
 Check that node and nvm are installed correctly:
-`nvm -v && node -v`
+
+<pre>
+  nvm -v && node -v
+</pre>
 
 ### 3. Install Yarn
 
-`npm install -g yarn`
+<pre>
+  npm install -g yarn
+</pre>
+
 Check that yarn is installed correctly:
-`yarn -v`
+
+<pre>
+  yarn -v
+</pre>
 
 ### 4. Install Git & Create SSH Keys
 
-`brew install git`
-`ssh-keygen -t ed25519 -C "your_email@example.com"`
-Accept default file path and passphrase.
+<pre>
+  brew install git <br>
+  ssh-keygen -t ed25519 -C "your_email@example.com"
+</pre>
+
+Accept the default file path and passphrase.
 Start SSH agent in background:
-`eval "$(ssh-agent -s)"`
+
+<pre>
+  eval "$(ssh-agent -s)"
+</pre>
+
 Check if a config file is created and if not, create one:
-`open ~/.ssh/config`
+
+<pre>
+  open ~/.ssh/config
+</pre>
+
 AND/OR:
-`touch ~/.ssh/config`
+
+<pre>
+  touch ~/.ssh/config
+</pre>
+
 Add the following to config:
 
 <pre>
@@ -58,8 +102,16 @@ Add the following to config:
 </pre>
 
 Add SSH private key to SSH agent and store passphrase in keychain:
-`ssh-add -K ~/.ssh/id_ed25519`
+
+<pre>
+  ssh-add -K ~/.ssh/id_ed25519
+</pre>
+
 Add public key to GitHub account:
-`pbcopy < ~/.ssh/id_ed25519.pub`
+
+<pre>
+  pbcopy < ~/.ssh/id_ed25519.pub
+</pre>
+
 Then go to GitHub profile>settings>SSH and GPG keys.
 Add new SSH Key>Title i.e. "Work MacBook Pro" and paste key into "key" field.
