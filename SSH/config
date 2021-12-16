@@ -1,3 +1,9 @@
+Host elysianwebdesign.com
+  HostName elysianwebdesign.com
+  Port 22
+  User elysianwebdesign
+  IdentityFile ~/.ssh/elysian-key
+
 Host *
   AddKeysToAgent yes
   UseKeychain yes

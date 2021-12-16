@@ -15,8 +15,7 @@ export ZSH="/Users/h510084/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -119,24 +118,24 @@ alias reload="source ~/.zshrc"
 alias bup="brew update && brew upgrade && brew cleanup && brew doctor"
 alias blist="brew list"
 # GitHub Aliases
-alias gita="git add ."
-alias gitcm="git commit -m" # Followed by message in quotes
-alias gits="git status"
-alias gitpom="git push origin main"
-alias gitcb="git checkout -b"
-alias gitc="git clone"
-alias gitpu="git pull"
-alias gitp="git push"
+alias ga="git add ."
+alias gcm="git commit -m" # Followed by message in quotes
+alias gs="git status"
+alias gpom="git push origin main"
+alias gcb="git checkout -b"
+alias gc="git clone"
+alias gpu="git pull"
+alias gp="git push"
 # GatsbyJS Aliases
 ## Run gatsby new in global project folder "dev"
-alias gnew="gatsby new"
-alias gdev="gatsby develop"
+alias gatnew="gatsby new"
+alias gatdev="gatsby develop"
 # NextJS Aliases
-alias ncna="npx create-next-app@latest"
-alias ncnat="npx create-next-app@latest --typescript"
-alias ndev="npm run dev"
-alias nbuild="npm run build && npm run export"
-alias nstart="npm run start"
+alias nxtcna="npx create-next-app@latest"
+alias nxtcnat="npx create-next-app@latest --typescript"
+alias nxtdev="npm run dev"
+alias nxtbuild="npm run build && npm run export"
+alias nxtstart="npm run start"
 # NPM Aliases
 alias ni="npm install"
 alias nis='npm install --save'
@@ -163,6 +162,23 @@ alias ygu="yarn global upgrade"
 alias yl="yarn list --depth=0"
 alias ygl="yarn global list --depth=0"
 alias yo="yarn outdated"
+# SSH Aliases
+## Generate ssh keys and save to specific filename
+alias sgen="ssh-keygen -t rsa"
+## Copy generated public key to host
+### After ~/.ssh/ you type after [no space] the name of custom public key followed by sshUser@sshHost
+alias scopy="ssh-copy-id -i ~/.ssh/"
+## SSH into host to confirm connection
+alias sely="ssh elysianwebdesign@elysianwebdesign.com"
+alias wppl="wp plugin list"
+### After plugin install type after a [space] the name of plugin followed by --activate
+alias wppia="wp plugin install"
+### After plugin uninstall type after a [space] the name of plugin followed by --deactivate
+alias wppud="wp plugin uninstall"
+alias wpul="wp user list"
+## display user list in portable format (i.e. JSON)
+alias wpulf="wp user list --format=json"
+alias wppage="wp post list --post_type='page'"
 
 # NVM Source
 export NVM_DIR="$HOME/.nvm"
