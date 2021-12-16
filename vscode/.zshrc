@@ -179,6 +179,17 @@ alias wpul="wp user list"
 ## display user list in portable format (i.e. JSON)
 alias wpulf="wp user list --format=json"
 alias wppage="wp post list --post_type='page'"
+# WP-CLI Aliases
+### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
+alias wpcronr="wp cron event run --all --ssh=elysianwebdesign.com/"
+### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
+alias wpcronl="wp cron event list --ssh=elysianwebdesign.com/"
+### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
+alias wppua="wp plugin update --all --ssh=elysianwebdesign.com/"
+### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
+alias wpcf="wp cache flush --ssh=elysianwebdesign.com/"
+### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
+alias wpcu="wp core update --ssh=elysianwebdesign.com/"
 
 # NVM Source
 export NVM_DIR="$HOME/.nvm"
