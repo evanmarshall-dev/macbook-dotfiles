@@ -58,11 +58,17 @@
   "cSpell.userWords": [
     "Dotfiles",
     "downloadjs",
+    "elysianwebdesign",
     "keychain",
     "Luzquinos",
     "mkdir",
     "pbcopy",
     "vueify",
     "vuex"
-  ]
+  ],
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open"
 }
