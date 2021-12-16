@@ -1,13 +1,17 @@
 {
   //Terminal
   "terminal.integrated.fontFamily": "Fira Mono for Powerline",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}${separator}${process}",
   // Editor settings
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.scrollBeyondLastLine": false,
+  "editor.suggestSelection": "first",
   "editor.scrollBeyondLastColumn": 2,
   "editor.accessibilitySupport": "off",
   // ESLint for code quality - Prettier for formatting
@@ -15,7 +19,7 @@
   "eslint.probe": ["javascript", "javascriptreact", "vue"],
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
-  //   "vetur.validation.template": false,
+  // "vetur.validation.template": false,
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
   // Toggle sidebar & activity bar (install multi-command ext)
@@ -39,16 +43,26 @@
     "**/CVS": true,
     "**/dist": false
   },
-  // Themes
+  // Workbench & Themes
   "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.highlightModifiedTabs": true,
   "workbench.productIconTheme": "fluent-icons",
-  "editor.suggestSelection": "first",
+  // VSIntellicode Settings
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  //Settings Sync GitHub Gist
   "sync.gist": "231e64a001dde0a0ffdd77052bd4e228",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
   // Deprecation Notices
-  "bracket-pair-colorizer-2.depreciation-notice": false
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  // Saved Words in User Directory
+  "cSpell.userWords": [
+    "Dotfiles",
+    "downloadjs",
+    "keychain",
+    "Luzquinos",
+    "mkdir",
+    "pbcopy",
+    "vueify",
+    "vuex"
+  ]
 }
