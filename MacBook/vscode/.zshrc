@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,7 +8,7 @@ export ZSH="/Users/h510084/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,7 +75,6 @@ plugins=(
   node
   npm
   nvm
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,6 +118,21 @@ alias gcb="git checkout -b"
 alias gc="git clone"
 alias gpu="git pull"
 alias gp="git push"
+alias gcache="git config --global credential.helper cache --timeout=3600"
+## Run following when adding local repo to remote
+alias grao="git remote add origin"
+alias gbm="git branch -M main"
+alias gpuom="git push -u origin main"
+# Docker aliases for Synology (non-root)
+alias pserver="ssh gingaranga@192.168.4.27 -p34"
+alias di="sudo docker images"
+alias dcu="sudo docker-compose up -d"
+alias dc="sudo docker container ls -a"
+alias dsc="sudo docker stop"
+alias drc="sudo docker rm"
+alias dri="sudo docker rmi"
+alias dcd="sudo docker compose down"
+alias dpa="sudo docker system prune -a"
 # GatsbyJS Aliases
 ## Run gatsby new in global project folder "dev"
 alias gatnew="gatsby new"
@@ -133,16 +140,13 @@ alias gatdev="gatsby develop"
 # NextJS Aliases
 alias nxtcna="npx create-next-app@latest"
 alias nxtcnat="npx create-next-app@latest --typescript"
-alias nxtdev="npm run dev"
-alias nxtbuild="npm run build && npm run export"
-alias nxtstart="npm run start"
+alias nxtdev="yarn dev"
+alias nxtbuild="yarn build && yarn export"
+alias nxtstart="yarn start"
 # NPM Aliases
 alias ni="npm install"
-alias nis='npm install --save'
 alias nid='npm install --save-dev'
 alias nu="npm uninstall"
-alias nus='npm uninstall --save'
-alias nud='npm uninstall --save-dev'
 alias nod='npm outdated'
 alias nrb='npm rebuild'
 alias nud='npm update'
@@ -200,11 +204,10 @@ export NVM_DIR="$HOME/.nvm"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Change Default ZSH prompt
-# PROMPT='%B%F{51}%n %1~ %#'
-
-# Powerlevel10k Source
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Remove system and username from terminal and change prompt
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
+}
