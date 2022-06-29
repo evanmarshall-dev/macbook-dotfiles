@@ -75,6 +75,12 @@ plugins=(
   node
   npm
   nvm
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  sudo
+  web-search
+  copypath
+  copyfile
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,7 +126,7 @@ alias gpu="git pull"
 alias gp="git push"
 alias gcache="git config --global credential.helper cache --timeout=3600"
 ## Run following when adding local repo to remote
-alias grao="git remote add origin"
+alias grao="git remote add origin" # Followed by remote URL
 alias gbm="git branch -M main"
 alias gpuom="git push -u origin main"
 # Docker aliases for Synology (non-root)
