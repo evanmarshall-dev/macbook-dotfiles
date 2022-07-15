@@ -1,74 +1,95 @@
 {
-  //Terminal
-  "terminal.integrated.fontFamily": "Fira Mono for Powerline",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}${separator}${process}",
-  // Editor settings
-  "editor.wordWrap": "on",
+  // Prettier & ESLint Settings
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  // Workbench Settings
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.colorTheme": "Night Owl",
+  "workbench.startupEditor": "none",
+  "workbench.editor.highlightModifiedTabs": true,
+  // Editor Settings
   "editor.minimap.enabled": false,
-  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 16,
-  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.renderWhitespace": "all",
   "editor.tabSize": 2,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
   "editor.scrollBeyondLastLine": false,
-  "editor.suggestSelection": "first",
+  "editor.linkedEditing": true,
   "editor.scrollBeyondLastColumn": 2,
   "editor.accessibilitySupport": "off",
-  // ESLint for code quality - Prettier for formatting
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.probe": ["javascript", "javascriptreact", "vue"],
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
-  // "vetur.validation.template": false,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
-  // Toggle sidebar & activity bar (install multi-command ext)
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.makeRoom",
-      "sequence": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.action.toggleActivityBarVisibility"
-      ]
-    }
-  ],
-  // Show/hide files in file tree
-  "files.exclude": {
-    "**/.cache": true,
-    "**/.DS_Store": true,
-    "**/.git": false,
-    "**/.hg": true,
-    "**/.next": false,
-    "**/.svn": true,
-    "**/CVS": true,
-    "**/dist": false
-  },
-  // Workbench & Themes
-  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.productIconTheme": "fluent-icons",
-  // VSIntellicode Settings
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  //Settings Sync GitHub Gist
-  "sync.gist": "231e64a001dde0a0ffdd77052bd4e228",
-  // Deprecation Notices
-  "bracket-pair-colorizer-2.depreciation-notice": false,
-  // Saved Words in User Directory
-  "cSpell.userWords": [
-    "Dotfiles",
-    "downloadjs",
-    "elysianwebdesign",
-    "keychain",
-    "Luzquinos",
-    "mkdir",
-    "pbcopy",
-    "vueify",
-    "vuex"
-  ],
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  // Terminal Settings
+  "terminal.integrated.fontSize": 18,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "workbench.startupEditor": "none",
-  "security.workspace.trust.untrustedFiles": "open"
+  // Emmet Settings
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // Excluded Files Settings
+  "files.exclude": {
+    "**/.git": false,
+    "**/.next": false,
+    "**/dist": false
+  },
+  // VSIntellicode Settings
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // Settings to use local and/or global gitignore
+  "search.useIgnoreFiles": true,
+  "search.useGlobalIgnoreFiles": true,
+  // Saved Words in User Directory
+  "cSpell.userWords": [
+    "ACTIVEWEAR",
+    "Bitstream",
+    "buildfr",
+    "colour",
+    "deferreds",
+    "Dotfiles",
+    "downloadjs",
+    "elysianwebdesign",
+    "esbenp",
+    "evanmarshall",
+    "evanmarshallwebdeveloper",
+    "Fabricare",
+    "Fira",
+    "gsap",
+    "Intellicode",
+    "jewellery",
+    "keychain",
+    "Lato",
+    "mkdir",
+    "monospace",
+    "nextjs",
+    "noopener",
+    "noreferrer",
+    "pbcopy",
+    "pubdate",
+    "Raleway",
+    "roboto",
+    "SMACSS",
+    "tailwindcss",
+    "thebay",
+    "typekit",
+    "vsintellicode",
+    "watchfr",
+    "wcsstore",
+    "Zellers"
+  ],
+  // Explorer Settings
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // Lint Settings
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
 }
