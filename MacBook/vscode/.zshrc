@@ -200,6 +200,8 @@ alias wppua="wp plugin update --all --ssh=elysianwebdesign.com/"
 alias wpcf="wp cache flush --ssh=elysianwebdesign.com/"
 ### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
 alias wpcu="wp core update --ssh=elysianwebdesign.com/"
+# php w/ Remote Containers Aliases
+alias phps="php -S 0.0.0.0:5000"
 
 # NVM Source
 export NVM_DIR="$HOME/.nvm"
