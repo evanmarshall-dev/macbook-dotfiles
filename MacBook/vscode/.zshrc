@@ -75,12 +75,6 @@ plugins=(
   node
   npm
   nvm
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  sudo
-  web-search
-  copypath
-  copyfile
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,16 +114,35 @@ alias ga="git add ."
 alias gcm="git commit -m" # Followed by message in quotes
 alias gs="git status"
 alias gpom="git push origin main"
+## Create new branch
 alias gcb="git checkout -b"
+## Switch to branch specified after checkout
+alias gsb="git checkout"
 alias gc="git clone"
+## Set upstream to push branch followed by name of branch
+alias gus="git push --set-upstream origin"
 alias gpu="git pull"
 alias gp="git push"
 alias gcache="git config --global credential.helper cache --timeout=3600"
 ## Run following when adding local repo to remote
-alias grao="git remote add origin" # Followed by remote URL
+## For grao make sure you add URL for remote repo and edit to @dgit or whichever github account you use
+alias grao="git remote add origin"
 alias gbm="git branch -M main"
 alias gpuom="git push -u origin main"
+# WP-CLI Aliases
+alias wpi="brew install wp-cli"
+alias wpc="wp core download"
+alias wps="wp server"
+alias wpmysql="mysql -uroot"
+alias wpmysqls="brew services start mysql"
+alias wpmysqlrs="brew services restart mysql"
+alias wppass"mysql_secure_installation"
+# Within MySQL Aliases
+## alias dcreate="CREATE DATABASE `mycooldb` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+## alias dshow="SHOW DATABASES;"
+## alias dexit="exit;"
 # Docker aliases for Synology (non-root)
+## Replace username@IPaddress with your own as well as port
 alias pserver="ssh gingaranga@192.168.4.27 -p34"
 alias di="sudo docker images"
 alias dcu="sudo docker-compose up -d"
@@ -139,16 +152,14 @@ alias drc="sudo docker rm"
 alias dri="sudo docker rmi"
 alias dcd="sudo docker compose down"
 alias dpa="sudo docker system prune -a"
-# GatsbyJS Aliases
-## Run gatsby new in global project folder "dev"
-alias gatnew="gatsby new"
-alias gatdev="gatsby develop"
 # NextJS Aliases
-alias nxtcna="npx create-next-app@latest"
-alias nxtcnat="npx create-next-app@latest --typescript"
+## Add name of project after nxtcna or nxtcnat
+alias nxtcna="yarn create next-app"
+alias nxtcnat="yarn create next-app --typescript"
 alias nxtdev="yarn dev"
 alias nxtbuild="yarn build && yarn export"
 alias nxtstart="yarn start"
+alias nxtlint="yarn lint"
 # NPM Aliases
 alias ni="npm install"
 alias nid='npm install --save-dev'
@@ -172,6 +183,10 @@ alias ygu="yarn global upgrade"
 alias yl="yarn list --depth=0"
 alias ygl="yarn global list --depth=0"
 alias yo="yarn outdated"
+alias yei="yarn eslint --init"
+# Husky Aliases
+alias hi="npx husky-init && yarn"
+alias hpc="npx husky set .husky/pre-commit 'yarn lint'"
 # SSH Aliases
 ## Generate ssh keys and save to specific filename
 alias sgen="ssh-keygen -t rsa"
@@ -219,3 +234,4 @@ prompt_context() {
   RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
   prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
 }
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
