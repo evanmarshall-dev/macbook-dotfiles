@@ -1,5 +1,5 @@
-[user]
-	name = evanMarshallTheBay
-	email = evan.marshall@thebay.com
 [core]
-	excludesfile = /Users/h510084/.gitignore_global
+	excludesfile = /home/evanmarshall-dev/.gitignore_global
+[user]
+	name = evanmarshall-dev
+	email = me@evanmarshall.dev
