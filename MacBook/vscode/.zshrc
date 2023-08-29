@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
+  ohmyzsh-full-autoupdate
   zsh-completions
   git
   node
