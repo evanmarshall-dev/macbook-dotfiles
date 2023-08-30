@@ -105,15 +105,90 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# ZSH Aliases
-alias zshrc="code ~/.zshrc"
-alias reload="source ~/.zshrc"
-# Homebrew Aliases
+# SYSTEM ALIASES
+# ----------------------------------------------
+# get machine's ip address
+alias ip="ipconfig getifaddr en0"
+
+# CLI ALIASES
+# ----------------------------------------------
+alias out="cd .."
+alias in="cd"
+alias md="mkdir"
+alias mfi="touch"
+alias m="mv"
+alias c="cp"
+alias d="rm"
+alias df="rm -r"
+alias l="ls"
+alias la="ls -a"
+alias p="pwd"
+alias cl="clear"
+## man gives help guide to corresponding command
+alias ma="man"
+
+# NODE ALIASES
+# ----------------------------------------------
+## Specific to web dev bootcamp folder/file creation script.
+alias nf="node create-dir.js" ## Followed by the folder name.
+
+# HOMEBREW ALIASES
+# ----------------------------------------------
 alias bup="brew update && brew upgrade && brew cleanup && brew doctor"
 alias blist="brew list"
-# GitHub Aliases
-alias ga="git add ."
-alias gcm="git commit -m" # Followed by message in quotes
+
+# WSL/UBUNTU ALIASES
+# ----------------------------------------------
+alias distup="sudo apt-get update && sudo apt-get upgrade -y"
+
+# ZSH/OH-MY-ZSH ALIASES
+# ----------------------------------------------
+# Install oh-my-zsh
+alias omzinstall="sh -c '$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'"
+# Install oh-my-zsh
+alias ozin="sh -c '$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'"
+# Update oh-my-zsh instances
+alias ozup="omz update"
+# edit global zsh configuration
+alias zconf="code ~/.zshrc"
+# reload zsh configuration
+alias zsrc="source ~/.zshrc"
+# reload zsh configuration
+alias oz="cd ~/.oh-my-zsh"
+
+# SSH ALIASES
+# ----------------------------------------------
+# navigate to global ssh directory
+alias sshhome="cd ~/.ssh"
+# edit global ssh configuration
+alias sshconfig="code ~/.ssh/config"
+## Follow key gen alias with your email address then you will be prompted for a filename i.e. personalaccount-github
+alias skgen="ssh-keygen -t ed25519 -C"
+## Start SSH agent
+alias sagent="eval '$(ssh-agent -s)'"
+## Add key to agent. Make sure you add filename created above to the end of this alias
+alias sakey="ssh-add -K ~/.ssh/"
+## Test your connection. Make sure you add your Host name created during the config file setup, to the end of this alias
+alias stest="ssh -T git@"
+## All info for ssh setup can be found at: https://www.darraghoriordan.com/2021/05/04/configure-multiple-github-accounts-one-computer/
+
+# GULP ALIASES
+# ----------------------------------------------
+## Gulp Development Tasks
+alias g="gulp"
+alias gfr="gulp devFr"
+## Gulp Build/Compile Tasks
+alias gb="gulp build"
+alias gbfr="gulp buildFr"
+## Individual gulp tasks
+alias gcl="gulp clean"
+alias gw="gulp watchDev"
+
+# GIT ALIASES
+# ----------------------------------------------
+# edit global git configuration
+alias gconf="code ~/.gitconfig"
+alias gcm="git add . && git commit -m" # Followed by message in quotes
 alias gs="git status"
 alias gpom="git push origin main"
 ## Create new branch
@@ -127,34 +202,25 @@ alias gpu="git pull"
 alias gp="git push"
 alias gcache="git config --global credential.helper cache --timeout=3600"
 ## Run following when adding local repo to remote
-## For grao make sure you add URL for remote repo and edit to @dgit or whichever github account you use
-alias grao="git remote add origin"
+### First, cd into local repo and add a README file.
+#### echo "# name-of-repo" >> README.md
+### Replace name-of-repo with the name of your repository
+### Add git initialization to project
+alias gin="git init"
+### Stage README, created above.
+alias gar="git add README.md"
+### Commit changes
+alias gcf="git commit -m 'first commit'"
+### Make sure on main branch
 alias gbm="git branch -M main"
-alias gpuom="git push -u origin main"
-# WP-CLI Aliases
-alias wpi="brew install wp-cli"
-alias wpc="wp core download"
-alias wps="wp server"
-alias wpmysql="mysql -uroot"
-alias wpmysqls="brew services start mysql"
-alias wpmysqlrs="brew services restart mysql"
-alias wppass"mysql_secure_installation"
-# Within MySQL Aliases
-## alias dcreate="CREATE DATABASE `mycooldb` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-## alias dshow="SHOW DATABASES;"
-## alias dexit="exit;"
-# Docker aliases for Synology (non-root)
-## Replace username@IPaddress with your own as well as port
-alias pserver="ssh gingaranga@192.168.4.27 -p34"
-alias di="sudo docker images"
-alias dcu="sudo docker-compose up -d"
-alias dc="sudo docker container ls -a"
-alias dsc="sudo docker stop"
-alias drc="sudo docker rm"
-alias dri="sudo docker rmi"
-alias dcd="sudo docker compose down"
-alias dpa="sudo docker system prune -a"
-# NextJS Aliases
+### Add remote origin to local repo
+### Make sure you add the remote URL after command using SSH config in place of git@github.com: to git@dgit:
+alias grao="git remote add origin"
+### Push local changes to remote main branch
+alias gpom="git push -u origin main"
+
+# NEXTJS ALIASES
+# ----------------------------------------------
 ## Add name of project after nxtcna or nxtcnat
 alias nxtcna="yarn create next-app"
 alias nxtcnat="yarn create next-app --typescript"
@@ -162,17 +228,9 @@ alias nxtdev="yarn dev"
 alias nxtbuild="yarn build && yarn export"
 alias nxtstart="yarn start"
 alias nxtlint="yarn lint"
-# NPM Aliases
-alias ni="npm install"
-alias nid='npm install --save-dev'
-alias nu="npm uninstall"
-alias nod='npm outdated'
-alias nrb='npm rebuild'
-alias nud='npm update'
-alias nr='npm run'
-alias nls='npm list'
-alias nlsg='npm list --global'
-# Yarn Aliases
+
+# YARN ALIASES
+# ----------------------------------------------
 alias y="yarn"
 alias yi="yarn init -y"
 alias ya="yarn add"
@@ -180,45 +238,47 @@ alias yr="yarn remove"
 alias yad="yarn add -D"
 alias yga="yarn global add"
 alias ygr="yarn global remove"
-alias yu="yarn upgrade"
+alias yu="yarn upgrade-interactive --latest"
 alias ygu="yarn global upgrade"
 alias yl="yarn list --depth=0"
 alias ygl="yarn global list --depth=0"
 alias yo="yarn outdated"
 alias yei="yarn eslint --init"
-# Husky Aliases
+
+# NPM ALIASES
+# ----------------------------------------------
+alias nconf="npm init @eslint/config"
+alias ni="npm init"
+alias nr="npm run"
+alias nrb="npm run build"
+alias nrs="npm run start"
+alias nrl="npm run lint"
+alias nrt="npm run test"
+alias nrw="npm run watch"
+alias nt="npm test"
+alias nig="npm install -g"
+alias nin="npm install"
+alias nid="npm install --save-dev"
+alias nie="npm install --save-dev --save-exact"
+alias nun="npm uninstall"
+alias ning="npm install -g"
+alias nung="npm uninstall -g"
+alias nu="npm update"
+alias nri="npm run upgrade-interactive"
+alias no="npm outdated"
+alias np="npm prune"
+alias nc="npm cache clean"
+alias na="npm audit"
+alias naf="npm audit fix"
+
+# NODEMON ALIASES
+# ----------------------------------------------
+alias nd="nodemon"
+
+# HUSKY ALIASES
+# ----------------------------------------------
+# Install Husky
 alias hi="npx husky-init && yarn"
-alias hpc="npx husky set .husky/pre-commit 'yarn lint'"
-# SSH Aliases
-## Generate ssh keys and save to specific filename
-alias sgen="ssh-keygen -t rsa"
-## Copy generated public key to host
-### After ~/.ssh/ you type after [no space] the name of custom public key followed by sshUser@sshHost
-alias scopy="ssh-copy-id -i ~/.ssh/"
-## SSH into host to confirm connection
-alias sely="ssh elysianwebdesign@elysianwebdesign.com"
-alias wppl="wp plugin list"
-### After plugin install type after a [space] the name of plugin followed by --activate
-alias wppia="wp plugin install"
-### After plugin uninstall type after a [space] the name of plugin followed by --deactivate
-alias wppud="wp plugin uninstall"
-alias wpul="wp user list"
-## display user list in portable format (i.e. JSON)
-alias wpulf="wp user list --format=json"
-alias wppage="wp post list --post_type='page'"
-# WP-CLI Aliases
-### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
-alias wpcronr="wp cron event run --all --ssh=elysianwebdesign.com/"
-### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
-alias wpcronl="wp cron event list --ssh=elysianwebdesign.com/"
-### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
-alias wppua="wp plugin update --all --ssh=elysianwebdesign.com/"
-### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
-alias wpcf="wp cache flush --ssh=elysianwebdesign.com/"
-### After --ssh=elysianwebdesign.com/ you type after [no space] the directory on the server where the WordPress install lives (i.e. home/elysianwebdesign/elysianwebdesign.com)
-alias wpcu="wp core update --ssh=elysianwebdesign.com/"
-# php w/ Remote Containers Aliases
-alias phps="php -S 0.0.0.0:5000"
 
 # Remove system and username from terminal and change prompt
 prompt_context() {
